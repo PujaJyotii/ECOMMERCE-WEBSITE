@@ -1,0 +1,13 @@
+.header {
+    background-color: grey;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header-text {
+    color: white;
+    font-size: 60px;
+    font-weight: bolder;
+    margin: 0;
+    margin-top: 45px;
+  }

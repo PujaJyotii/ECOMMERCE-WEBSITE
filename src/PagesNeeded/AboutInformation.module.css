@@ -1,0 +1,54 @@
+.header {
+    background-color: grey;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header-text {
+    color: white;
+    font-size: 60px;
+    font-weight: bolder;
+    margin: 0;
+    margin-top: 45px;
+  }
+
+.heading
+{
+    font-family: "Metal Mania";
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.p
+{
+    font-size: 17px;
+    margin: 20px;
+    color: #252424;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.img
+{
+    float: left;
+    margin: 20px 50px;
+    border-radius: 60%;
+    width: 180px;
+    height: 180px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    
+}
+
