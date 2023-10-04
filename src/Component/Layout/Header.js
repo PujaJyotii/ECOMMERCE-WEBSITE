@@ -9,6 +9,7 @@ import CartContext from '../../Store/CartContext';
 
 
 
+
 const Header = (props) => {
  const cartCtx= useContext(CartContext)
  const totalNumber = cartCtx.items.reduce((curr,item) => (curr+item.quantity),0)
@@ -18,17 +19,18 @@ const Header = (props) => {
       
         <Navbar bg="dark" variant="dark" fixed='top'>
           <Nav className="mx-auto">
-          <Nav.Link href="/home">
-          <h3>HOME</h3>
+          <Nav.Link href="/store">
+          <h3>Store</h3>
+        </Nav.Link>
+          <Nav.Link href="/">
+          <h3>Home</h3>
           </Nav.Link>
-        <Nav.Link href="/">
-          <h3>STORE</h3>
+        
+        <Nav.Link href="about">
+          <h3>About</h3>
         </Nav.Link>
-        <Nav.Link href="/about">
-          <h3>ABOUT</h3>
-        </Nav.Link>
-        <Nav.Link href="/contactUs">
-          <h3>CONTACT US</h3>
+        <Nav.Link href="contactUs">
+          <h3>ContactUs</h3>
         </Nav.Link>
           </Nav>
         <Nav >

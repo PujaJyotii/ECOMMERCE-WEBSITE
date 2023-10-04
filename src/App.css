@@ -1,0 +1,223 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .Showproduct_heading {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .navbar .nav-link {
+    color: white;
+  }
+  .navbar-nav .nav-link.active {
+    color: #61dafb !important;
+  }
+  .navbar .cart-Item {
+    margin-left: auto;
+  }
+  .myCart {
+    position: fixed;
+    top: 55px;
+    right: 0;
+    width: 400px;
+    height: 560px;
+    z-index: 33;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-gap {
+    margin-right: 10px;
+  }
+  
+  .myCart h3 {
+    text-align: left;
+  }
+  .front-each-other {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .myCart .flexitems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .heading-myCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #about {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10px;
+  }
+  #about h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  #about .img-about {
+    float: left;
+  }
+  .home-album {
+    text-align: center;
+    background-color: #777777;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-album h1 {
+    padding-top: 30px;
+    font-size: 6rem;
+  }
+  .home-album h2 {
+    font-weight: 200;
+  }
+  .home-album p {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  .home-album .form-control {
+    width: 300px;
+  }
+  .home-tour {
+    margin-left: 18%;
+    margin-right: 18%;
+  }
+  .home-tour h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  .home-tour .arrtour {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-content: center;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  .home-tour .arrtour button {
+    margin-bottom: 10px;
+    margin-left: 120px;
+  }
+  
+  #formsection {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  #LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginform-styling {
+    border: 1px solid;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #350b5c;
+    border: 1px solid #350b5c;
+    border-radius: 10px;
+    box-shadow: 14px 18px 18px rgba(0, 0, 0, 0.2);
+  }
+  .loginform-styling h2 {
+    text-align: center;
+    color: white;
+  }
+  
+  #formsection h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #formstyling,
+  #formstyling-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  #formstyling-form p {
+    color: white;
+  }
+  #formstyling button {
+    align-self: center;
+  }
+  #formstyling-form button {
+    align-self: center;
+    margin-top: 25px;
+    background-color: #9665ce;
+    border: #9665ce;
+  }
+  .goLink-auth {
+    display: flex;
+    justify-content: center;
+  }
+  .goLink-auth button {
+    background-color: #9665ce;
+    border: #9665ce;
+    margin-top: 25px;
+  }
+  .loginform-styling button:hover {
+    background-color: #a15fec !important;
+    border: #a15fec !important;
+  }
+  
+  .loginform-styling .productdetail h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  .not-found {
+    text-align: center;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

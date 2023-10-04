@@ -29,7 +29,8 @@ color: #56CCF2;
 
 .button
 {
-    display: block;
+   
+  display: block;
     border: 1px solid #56CCF2;
     padding: 15px 30px;
     font-size: 23px;
