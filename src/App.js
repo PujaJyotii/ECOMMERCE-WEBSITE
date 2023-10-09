@@ -7,8 +7,14 @@ import StoreInformation from "./PagesNeeded/StoreInformation";
 import AboutInformation from "./PagesNeeded/AboutInformation";
 import HomeInformation from './PagesNeeded/HomeInformation';
 import ContactUs from "./PagesNeeded/ContactUs";
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Redirect   ,Route, Switch } from "react-router-dom";
 import ProductDetails from "./Component/ProductContainer/ProductDetails";
+import LoginInformation from "./PagesNeeded/LogInInformation";
+import { useContext } from "react";
+import AuthContext from "./Store/auth-context";
+import Welcome from "./PagesNeeded/Welcome";
+
+
 
 
   const productsArr = [
@@ -104,7 +110,7 @@ import ProductDetails from "./Component/ProductContainer/ProductDetails";
 
 function App() {
   const [showCart,setShowCart]=useState(false);
-
+const authCtx = useContext(AuthContext)
   const showCartHandler = () => {
     setShowCart(true)
   }
@@ -122,17 +128,26 @@ function App() {
     
     onShowCart={showCartHandler}/>}
       <Header onShowCart={showCartHandler}/>
-      </CartProvider>
-      <BrowserRouter>
-    
-      <Route path='/store' ><StoreInformation /></Route>
-      <Route path='/about' ><AboutInformation /></Route>
-      <Route path='/' exact ><HomeInformation /></Route>
-      <Route path='/contactUs' ><ContactUs/></Route>
-      <Route path="/product/:productId"><ProductDetails  productsArr={productsArr}/></Route>
       
+      <BrowserRouter>
+    <Switch>
+      
+    
+       {authCtx.isLoggIn && <Route path='/store' exact ><StoreInformation /></Route>}
+       {authCtx.isLoggIn && <Route path='/about' exact><AboutInformation /></Route>}
+      {authCtx.isLoggIn && <Route path='/home' exact ><HomeInformation /></Route>}
+      {authCtx.isLoggIn && <Route path='/contactUs'exact><ContactUs/></Route>}
+      {authCtx.isLoggIn && <Route path="/product/:productId" exact><ProductDetails  productsArr={productsArr}/></Route>}
+      <Route path='/login' exact>
+        {!authCtx.isLoggIn && <LoginInformation />}
+    </Route>
+     
+  <Route path='/' ><Welcome /></Route>
+  <Route path='*'><Redirect to='/' /></Route>
+  </Switch>
       </BrowserRouter>
       <Footer />
+      </CartProvider>
     </>
   );
 }

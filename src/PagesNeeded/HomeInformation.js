@@ -30,7 +30,7 @@ function HomePage() {
             BUY TICKETS
           </Button>
           </td>
-          <br/>
+          
         </tr>
         <tr >
           <td >JULY 17</td>
