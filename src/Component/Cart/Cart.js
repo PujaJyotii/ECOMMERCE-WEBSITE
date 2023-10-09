@@ -36,7 +36,7 @@ const Cart = (props) => {
               </Col>
               <Col md={8}>
                 <h5>{product.title}</h5>
-                <p>Price: ${product.price.toFixed(2)}</p>
+                <p>Price: ${product.price}</p>
                 <p>Quantity:{product.quantity}</p>
                 <Button
                       variant="primary"
