@@ -6,6 +6,8 @@ import AuthContext from "../Store/auth-context";
 import { useHistory } from "react-router-dom";
 
 
+
+
 const LoginInformation = () => {
   const enteredEmailRef=useRef();
   const enteredPasswordRef=useRef();
@@ -13,6 +15,7 @@ const LoginInformation = () => {
 const history = useHistory()
 
 const authCtx = useContext(AuthContext)
+
 
     const [isLogin, setIsLogin] = useState(true);
     const switchAuthModeHandler = () => {
@@ -55,8 +58,10 @@ const authCtx = useContext(AuthContext)
               throw new Error(errMessage)
             })
           }
-        }).then((data) => {
-          authCtx.login(data.idToken)
+        }).then( (data) => {
+          authCtx.login(data.idToken,data.email)
+          
+
           history.replace('/store')
         }).catch((err) => {
           alert(err.message)

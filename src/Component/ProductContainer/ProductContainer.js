@@ -1,15 +1,19 @@
-import {  Col, Container, Row} from "react-bootstrap";
-import Products from "./Products";
+import {  Button, Card, Col, Container, Row} from "react-bootstrap";
+import { useContext } from 'react';
+import classes from'./ProductContainer.module.css'
+
+import { Link } from 'react-router-dom';
+import AuthContext from '../../Store/auth-context';
 
 
 
 const productsArr = [
 
     {
-
+      id:1,
     title: 'Colors',
     name:'Colors',
-
+    quantity:1,
     price: 100,
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
@@ -29,10 +33,10 @@ const productsArr = [
     },
 
     {
-
+id:2,
     title: 'Black and white Colors',
     name: 'Black and white Colors',
-
+    quantity:1,
     price: 50,
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
@@ -52,9 +56,9 @@ const productsArr = [
     },
 
     {
-
+id:3,
     title: 'Yellow and Black Colors',
-
+    quantity:1,
     price: 70,
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
@@ -75,9 +79,9 @@ const productsArr = [
     },
 
     {
-
+    id:4,
     title: 'Blue Color',
-
+     quantity:1,
     price: 100,
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
@@ -104,24 +108,43 @@ const productsArr = [
 
 const ProductContainer = () => {
 
-
+  const authCtx =useContext(AuthContext)
+  function Itemadded(id) {
+    const myobj = productsArr.filter((item) => {
+      return item.id === id;
+    });
+  
+  
+  authCtx.addItems(myobj[0])
+  }
 
     return (
         <>
       <Container className="justify-content-center">
         <Row className="justify-content-center">
         
-        {productsArr.map((items,index) => (
-            <Col xs={12} sm={6} md={6} lg={6}  className="mb-5" >
+        {productsArr.map((items) => (
+            <Col key={items.id}  xs={12} sm={6} md={6} lg={6}  className="mb-5" >
               
-            <Products
-              key={index}
-              title={items.title}
-              name={items.name}
-              price={items.price}
-              img={items.imageUrl}
-            />
-          
+              <Card style={{ width: '300px',
+    height: '500px' ,
+    marginTop:'20px'}}>
+      <Card.Img   variant="top" src={items.imageUrl}
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }} className={classes['product-image']} />
+      <Card.Body>
+      <Link to={`/product/${items.title}`}>
+        <Card.Title>{items.title}</Card.Title>
+        <Card.Text>
+          Price: ${items.price}
+        </Card.Text>
+        </Link>
+        <Button variant="primary" style={{
+            position:'absolute',
+            bottom: '5px',
+            right: '5px'
+          }} onClick={() => {Itemadded(items.id);}} >Add to Cart</Button>
+      </Card.Body>
+          </Card>
             </Col>
           )
         )}
@@ -132,5 +155,6 @@ const ProductContainer = () => {
     )
 
 }
+
 
 export default ProductContainer

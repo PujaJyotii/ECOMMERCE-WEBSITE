@@ -4,7 +4,7 @@
 import React, { useContext } from 'react';
 import { Navbar, Nav, Button, Badge} from 'react-bootstrap';
 
-import CartContext from '../../Store/CartContext';
+
 import AuthContext from '../../Store/auth-context';
 
 
@@ -12,11 +12,16 @@ import AuthContext from '../../Store/auth-context';
 
 
 const Header = (props) => {
- const cartCtx= useContext(CartContext)
- const totalNumber = cartCtx.items.reduce((curr,item) => (curr+item.quantity),0)
+ 
+ 
  const authCtx =useContext(AuthContext);
 
-const isLoggIn = authCtx.isLoggIn;
+ let quantity = 0;
+ for (const item of authCtx.item) {
+   quantity += item.quantity;
+ }
+
+const isLoggIn = authCtx.isLoggedIn;
 const logoutHandler = () => {
   authCtx.logout()
   
@@ -51,7 +56,7 @@ const logoutHandler = () => {
         {isLoggIn && <Button variant="light" onClick={props.onShowCart}>
           Cart
           <Badge pill variant="danger" style={{ verticalAlign: 'super' }}>
-        {totalNumber}
+        {quantity}
       </Badge>
         </Button>}
     
