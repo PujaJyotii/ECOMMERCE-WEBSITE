@@ -1,20 +1,21 @@
 import React, { useContext } from 'react';
 import { Button, Card, Modal, Row, Col } from 'react-bootstrap';
-import CartContext from '../../Store/CartContext';
+import AuthContext from '../../Store/auth-context';
 
 
 const Cart = (props) => {
-   const cartCtx =useContext(CartContext);
-   const totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
-    const hasItems = cartCtx.items.length > 0;
-    const orderHandler = () => {
-        cartCtx.clearCart()
-        alert('Thank you! we got your order')
+   
+   const authCtx = useContext(AuthContext)
+  
+    const hasItems = authCtx.item.length > 0;
+  
 
+    function removeItemCart(id) {
+      authCtx.removeItems(id);
     }
-
-    const removeHandler = (id) => {
-        cartCtx.removeItem(id)
+    let multiplyItemsandPrice = 0;
+    for (const item of authCtx.item) {
+      multiplyItemsandPrice += +item.price * item.quantity;
     }
 
   return (
@@ -23,13 +24,13 @@ const Cart = (props) => {
           <Modal.Title>Cart</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {cartCtx.items.map((product) => (
+        {authCtx.item.map((product) => (
         <Card key={product.title} className="my-2">
           <Card.Body>
             <Row>
               <Col md={2}>
                 <img
-                  src={product.img}
+                  src={product.imageUrl}
                   alt={product.title}
                   className="img-fluid"
                 />
@@ -37,7 +38,8 @@ const Cart = (props) => {
               <Col md={8}>
                 <h5>{product.title}</h5>
                 <p>Price: ${product.price}</p>
-                <p>Quantity:{product.quantity}</p>
+                
+                <Button variant="outline-primary">{product.quantity}</Button>
                 <Button
                       variant="primary"
                       style={{
@@ -46,7 +48,7 @@ const Cart = (props) => {
             right: '5px',
                       }}
 
-                    onClick={() => removeHandler(product.title)}>
+                    onClick={() => removeItemCart(product.id)}>
                       Remove
                     </Button>
               </Col>
@@ -61,11 +63,11 @@ const Cart = (props) => {
     
 
       <span style={{fontWeight:'bolder',fontSize:'25px'}}>Total Amount:$</span>
-        <span style={{fontWeight:'bolder',fontSize:'25px'}}>{totalAmount}</span>
+        <span style={{fontWeight:'bolder',fontSize:'25px'}}>{multiplyItemsandPrice }</span>
     </Modal.Body>
     <Modal.Footer>
         
-        {hasItems && <Button variant='primary' onClick={orderHandler}>Purchase</Button>}
+        {hasItems && <Button variant='primary' >Purchase</Button>}
     </Modal.Footer>
     </Modal>
   );

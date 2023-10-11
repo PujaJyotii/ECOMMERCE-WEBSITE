@@ -5,7 +5,8 @@ items:[],
 totalAmount:0,
 addItem:(item) => {},
 purchaseItems:()=>{},
-removeItem:(id) => {}
+removeItem:(id) => {},
+setCartItems: () => {},
 })
 
 export default CartContext
