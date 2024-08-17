@@ -24,13 +24,13 @@ This is a user-specific e-commerce application built using React. It allows user
  
    ```bash
    npm install
-4.**Start the development server:**
+ 4.**Start the development server:**
      
    ```bash
    npm start
    ```
   
-### Dependencies
+ ### Dependencies
 
   - **axios**: ^1.5.1
   - **bootstrap**: ^5.3.2
@@ -43,15 +43,15 @@ This is a user-specific e-commerce application built using React. It allows user
   - **react-responsive-carousel**: ^3.2.23
   - **react-router-dom**: ^5.3.4
 
-## Key Features
-- **Navigate through the application** using the top navigation bar to explore different sections such as the product page, about page, information page, and contact page.
-- **Log in or sign up** to access personalized features like adding products to the cart.
-- **Browse and add products** to your cart, view detailed product information, and manage your cart items.
-- **Contact the service provider** by leaving your information on the contact page.
-- **Log out** securely when finished to end your session.
+ ## Key Features
+  - **Navigate through the application** using the top navigation bar to explore different sections such as the product page, about page, information page, and contact page.
+  - **Log in or sign up** to access personalized features like adding products to the cart.
+  - **Browse and add products** to your cart, view detailed product information, and manage your cart items.
+  - **Contact the service provider** by leaving your information on the contact page.
+  - **Log out** securely when finished to end your session.
 
-## Technologies Used
-- **React**: Front-end library for building the user interface.
-- **Firebase**: Used for authentication and real-time database management.
-- **Bootstrap & CSS Modules**: For responsive and modular styling.
-- **Context API**: State management is done with Context API.
+ ## Technologies Used
+  - **React**: Front-end library for building the user interface.
+  - **Firebase**: Used for authentication and real-time database management.
+  - **Bootstrap & CSS Modules**: For responsive and modular styling.
+  - **Context API**: State management is done with Context API.
