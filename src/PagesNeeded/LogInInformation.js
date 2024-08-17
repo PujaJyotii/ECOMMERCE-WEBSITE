@@ -29,43 +29,43 @@ const authCtx = useContext(AuthContext)
         const enteredPassword= enteredPasswordRef.current.value;
 
     let url;
-        if(isLogin)
-        {
-        url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCEed_BOyitM68AAqa5txi48n_44kUbDaQ'
-        }
-        else{
-          url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCEed_BOyitM68AAqa5txi48n_44kUbDaQ'
-        }
-        fetch(url,{
-          method:'POST',
-          body:JSON.stringify({email:enteredEmail,
-          password:enteredPassword,
-          returnSecureToken:'true'}),
-          headers:{'Content-Type': 'application/json'
-        }
-          
-        }).then(res => {
-          if(res.ok){
-             return res.json()
+    if(isLogin)
+    {
+    url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCEed_BOyitM68AAqa5txi48n_44kUbDaQ'
+    }
+    else{
+      url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCEed_BOyitM68AAqa5txi48n_44kUbDaQ'
+    }
+    fetch(url,{
+      method:'POST',
+      body:JSON.stringify({email:enteredEmail,
+      password:enteredPassword,
+      returnSecureToken:'true'}),
+      headers:{'Content-Type': 'application/json'
+    }
+      
+    }).then(res => {
+      if(res.ok){
+         return res.json()
+      }
+      else{
+        return res.json().then((data) => {
+          let errMessage='Authentication Failed';
+          if(data && data.error && data.error.message)
+          {
+            errMessage=data.error.message
           }
-          else{
-            return res.json().then((data) => {
-              let errMessage='Authentication Failed';
-              if(data && data.error && data.error.message)
-              {
-                errMessage=data.error.message
-              }
-              throw new Error(errMessage)
-            })
-          }
-        }).then( (data) => {
-          authCtx.login(data.idToken,data.email)
-          
-
-          history.replace('/store')
-        }).catch((err) => {
-          alert(err.message)
+          throw new Error(errMessage)
         })
+      }
+    }).then( (data) => {
+      authCtx.login(data.idToken,data.email)
+      
+
+      history.replace('/store')
+    }).catch((err) => {
+      alert(err.message)
+    })
 
       }
 
