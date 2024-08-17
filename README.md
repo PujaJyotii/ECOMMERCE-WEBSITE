@@ -24,11 +24,11 @@ This is a user-specific e-commerce application built using React. It allows user
  
    ```bash
    npm install
- 4.**Start the development server:**
+ 4. **Start the development server:**
      
-   ```bash
-   npm start
-   ```
+    ```bash
+    npm start
+    ```
   
  ### Dependencies
 
