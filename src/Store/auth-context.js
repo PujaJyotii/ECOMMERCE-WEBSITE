@@ -68,7 +68,7 @@ async function addItemsHandler(item) {
     if (IndexofItem === -1) {
       try {
         let response = await axios.post(
-          `https://crudcrud.com/api/e56a9edb777e4ce18bbb2f87a6b1cd3e/cart${createnewEmail}`,
+          `https://crudcrud.com/api/24075b8ffc154078ab45ee80c6a6edef/cart${createnewEmail}`,
           item,
           {
             headers: {
@@ -90,7 +90,7 @@ async function addItemsHandler(item) {
       setItems(copyItems);
       try {
         let response = await axios.put(
-          `https://crudcrud.com/api/e56a9edb777e4ce18bbb2f87a6b1cd3e/cart${createnewEmail}/${copyItems[IndexofItem]._id}`,
+          `https://crudcrud.com/api/24075b8ffc154078ab45ee80c6a6edef/cart${createnewEmail}/${copyItems[IndexofItem]._id}`,
           {
             id: item.id,
             title: item.title,
@@ -115,7 +115,7 @@ async function addItemsHandler(item) {
     async function getItemList(createnewEmail) {
       try {
         let response = await axios.get(
-          `https://crudcrud.com/api/e56a9edb777e4ce18bbb2f87a6b1cd3e/cart${createnewEmail}`
+          `https://crudcrud.com/api/24075b8ffc154078ab45ee80c6a6edef/cart${createnewEmail}`
         );
         response = await response;
         setItems(response.data);
@@ -145,7 +145,7 @@ async function addItemsHandler(item) {
       setItems(copyArr);
       try {
         let response = await axios.put(
-          `https://crudcrud.com/api/e56a9edb777e4ce18bbb2f87a6b1cd3e/cart${createnewEmail}/${copyArr[ItemIndex]._id}`,
+          `https://crudcrud.com/api/24075b8ffc154078ab45ee80c6a6edef/cart${createnewEmail}/${copyArr[ItemIndex]._id}`,
           {
             id: copyArr[ItemIndex].id,
             title: copyArr[ItemIndex].title,
@@ -170,7 +170,7 @@ async function addItemsHandler(item) {
       setItems(Itemafterdeletetion);
       try {
         await axios.delete(
-          `https://crudcrud.com/api/e56a9edb777e4ce18bbb2f87a6b1cd3e/cart${createnewEmail}/${copyArr[ItemIndex]._id}`
+          `https://crudcrud.com/api/24075b8ffc154078ab45ee80c6a6edef/cart${createnewEmail}/${copyArr[ItemIndex]._id}`
         );
       } catch (err) {
         console.log(`Error: ${err}`);
