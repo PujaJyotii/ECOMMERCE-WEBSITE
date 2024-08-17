@@ -28,6 +28,7 @@ This is a user-specific e-commerce application built using React. It allows user
      
    ```bash
    npm start
+   ```
   
 ### Dependencies
 
