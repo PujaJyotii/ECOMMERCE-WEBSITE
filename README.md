@@ -1,5 +1,5 @@
 # E-Commerce React Application
-This is a user-specific e-commerce application built using React. It allows users to browse products, add them to their cart, and manage their purchases. The app features secure authentication and real-time data management using Firebase,crudcrud,context API is used for state management, with a responsive design achieved through Bootstrap and CSS modules.
+This is a user-specific e-commerce application built using React. It allows users to browse products, add them to their cart, and manage their purchases. The app features secure authentication and real-time data management using Firebase and crudcrud.Context API is used for state management. A responsive design achieved through Bootstrap and CSS modules.
 
 **Welcome to my project!**
 ## Key Features
